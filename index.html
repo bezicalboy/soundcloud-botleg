@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- aplayer css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" />
+    <title>BEZICALSTREAM</title>
+    <!-- my css -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>RECOMEND FOR YOU</h3>
+          </div>
+          <!-- ready prob -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="0"> <img src="https://repeatmagazine.files.wordpress.com/2018/02/boy-pablo-roy-pablo-e1522680217673.jpg" alt="ready" /> </a>
+            <h4>Ready/Problem</h4>
+            <p>Boy Pablo</p>
+          </div>
+          <!-- losing you -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="1"> <img src="https://media.pitchfork.com/photos/5ab935c3132ef430960291a8/1:1/w_500/losing%20you%20boy%20pablo.jpg" alt="losing" /> </a>
+            <h4>Losing You</h4>
+            <p>Boy Pablo</p>
+          </div>
+          <!-- a dream of you -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8fPA0N-XY3VxrYSo-SQD9mB95gYWe1GxWBg&usqp=CAU" alt="dream" /> </a>
+            <h4>A Dream Of You</h4>
+            <p>Far Caspian</p>
+          </div>
+          <!-- bags -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="3"> <img src="https://media.pitchfork.com/photos/5ce8163c85a35d7aeee648a8/1:1/w_500/Clairo.jpg" alt="bags" /> </a>
+            <h4>Bags</h4>
+            <p>Clairo</p>
+          </div>
+          <!-- show me how -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="4"> <img src="https://images.genius.com/e799521b5022ccd9646d300dcf366c67.1000x1000x1.jpg" alt="showme" /> </a>
+            <h4>Show Me How</h4>
+            <p>men i trust</p>
+          </div>
+          <!-- bunny girl -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="5"> <img src="https://angartwork.akamaized.net/webp/?id=141927582&size=296" alt="bunny" /> </a>
+            <h4>Bunny Girl</h4>
+            <p>1nonly</p>
+          </div>
+          <!-- luvbird -->
+          <div class="col-md-3">
+            <a href="javascript:void();" class="album-poster" data-switch="6"> <img src="https://i1.sndcdn.com/artworks-000636290968-0joj2v-t500x500.jpg" alt="without" /> </a>
+            <h4>Without You</h4>
+            <p>Luvbird</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3>BEZICAL WEEKLY</h3>
+          </div>
+          <div class="col-md2">
+            <a href="#" class="album-poster" data-switch="7">
+              <img src="https://i0.wp.com/blog.lingodeer.com/wp-content/uploads/2020/06/478C50F4-C1BA-4618-B42E-596CAE013938.png?resize=300%2C265&ssl=1" alt="recom" />
+            </a>
+            <h4>Bei Feng Xiao</h4>
+            <p>Yi Jian Mei</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <div id="aplayer"></div>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- script aplayer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+    <script>
+      $(".album-poster").on('click', function (e){
+        var dataSwitchId = $(this).attr('data-switch');
+        // console.log(dataSwitchId);
+        ap.list.switch(dataSwitchId);
+        ap.play();
+        $("#aplayer").addClass('showPlayer');
+      });
+
+      const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        listFolded: true,
+        audio: [
+          {
+            name: 'Ready/Problem',
+            artist: 'Boy Pablo',
+            url: 'music/ready.mp3',
+            cover: 'https://repeatmagazine.files.wordpress.com/2018/02/boy-pablo-roy-pablo-e1522680217673.jpg',
+          },
+          {
+            name: 'Losing You',
+            artist: 'Boy Pablo',
+            url: 'music/losing.mp3',
+            cover: 'https://media.pitchfork.com/photos/5ab935c3132ef430960291a8/1:1/w_500/losing%20you%20boy%20pablo.jpg',
+          },
+          {
+            name: 'A Dream Of You',
+            artist: 'Far Caspian',
+            url: 'music/dreamof.mp3',
+            cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8fPA0N-XY3VxrYSo-SQD9mB95gYWe1GxWBg&usqp=CAU',
+          },
+          {
+            name: 'Bags',
+            artist: 'Clairo',
+            url: 'music/bags.mp3',
+            cover: 'https://media.pitchfork.com/photos/5ce8163c85a35d7aeee648a8/1:1/w_500/Clairo.jpg',
+          },
+          {
+            name: 'Show Me How',
+            artist: 'Men I Trust',
+            url: 'music/showmehow.mp3',
+            cover: 'https://images.genius.com/e799521b5022ccd9646d300dcf366c67.1000x1000x1.jpg',
+          },
+          {
+            name: 'Bunny Girl',
+            artist: '1nonly',
+            url: 'music/bunny.mp3',
+            cover: 'https://angartwork.akamaized.net/webp/?id=141927582&size=296',
+          },
+          {
+            name: 'Without You',
+            artist: 'Luvbird',
+            url: 'music/without.mp3',
+            cover: 'https://i1.sndcdn.com/artworks-000636290968-0joj2v-t500x500.jpg',
+          },
+          {
+            name: 'Bei Feng Xiao',
+            artist: 'Yi Jian Mei',
+            url: 'music/xue.mp3',
+            cover: 'https://i0.wp.com/blog.lingodeer.com/wp-content/uploads/2020/06/478C50F4-C1BA-4618-B42E-596CAE013938.png?resize=300%2C265&ssl=1',
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>
